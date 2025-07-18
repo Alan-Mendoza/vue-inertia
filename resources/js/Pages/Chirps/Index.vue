@@ -1,3 +1,11 @@
+<script setup>
+// const title = 'Title from Vue';
+    defineProps([
+        'subtitle',
+        'title'
+    ]);
+</script>
 <template>
-    <h1>Chirp Index</h1>
+    <h1>{{ title }}</h1>
+    <h2>{{ subtitle }}</h2>
 </template>

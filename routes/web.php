@@ -24,5 +24,8 @@ Route::middleware([
 });
 
 Route::get('/chirps', function () {
-    return Inertia::render('Chirps/Index');
+    return Inertia::render('Chirps/Index')->with([
+        'subtitle' => 'From PHP to JS',
+        'title' => 'Title from Vue',
+    ]);
 })->name('chirps.index');
