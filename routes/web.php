@@ -28,4 +28,4 @@ Route::get('/chirps', function () {
         'subtitle' => 'From PHP to JS',
         'title' => 'Title from Vue',
     ]);
-})->name('chirps.index');
+})->name('chirps.index')->middleware(['auth']);

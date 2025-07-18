@@ -10,6 +10,7 @@ import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 
 defineProps({
     title: String,
+    metaDescription: String,
 });
 
 const showingNavigationDropdown = ref(false);
@@ -29,7 +30,9 @@ const logout = () => {
 
 <template>
     <div>
-        <Head :title="title" />
+        <Head :title="title">
+            <meta v-if="metaDescription" name="description" :content="metaDescription" />
+        </Head>
 
         <Banner />
 
@@ -50,6 +53,11 @@ const logout = () => {
                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
+                                </NavLink>
+                            </div>
+                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                                <NavLink :href="route('chirps.index')" :active="route().current('chirps.index')">
+                                    Chirps
                                 </NavLink>
                             </div>
                         </div>
@@ -193,6 +201,9 @@ const logout = () => {
                     <div class="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('chirps.index')" :active="route().current('chirps.index')">
+                            Chirps
                         </ResponsiveNavLink>
                     </div>
 
