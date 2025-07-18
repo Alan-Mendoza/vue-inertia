@@ -22,3 +22,7 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 });
+
+Route::get('/chirps', function () {
+    return Inertia::render('Chirps/Index');
+})->name('chirps.index');
