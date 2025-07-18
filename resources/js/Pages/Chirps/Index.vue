@@ -15,7 +15,7 @@ import MyLayout from '@/Layouts/MyLayout.vue';
 
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-import Welcome from '@/Components/Welcome.vue';
+// import { Link } from '@inertiajs/vue3';
 defineProps(['subtitle', 'title']);
 </script>
 
@@ -30,7 +30,9 @@ defineProps(['subtitle', 'title']);
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-5">
-                    {{ subtitle }}
+                    {{ subtitle }}<br />
+                    <!-- <Link :href="route('chirps.index')">View Chirps</Link><br />
+                    <Link :href="route('dashboard')">View Dashboard</Link><br /> -->
                 </div>
             </div>
         </div>
